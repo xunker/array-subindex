@@ -4,7 +4,7 @@ require 'array/subindex'
 describe 'Array::subindex' do
   describe 'preserve previous functionality' do
     subject { [1,2,3] }
-    it "should return normal index values" do
+    it "returns normal index values with integer indexes" do
       expect(subject[0]).to eq(1)
       expect(subject[1]).to eq(2)
       expect(subject[2]).to eq(3)

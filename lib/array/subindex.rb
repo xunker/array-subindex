@@ -43,7 +43,7 @@ private
   end
 
   def numeric?(test)
-    !!(test.to_s =~ /[\d\.\/]+/)
+    (test.class != String) && (!!(test.to_s =~ /[\d\.\/]+/))
   end
 
   def array_like?(test)

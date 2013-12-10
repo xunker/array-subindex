@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = Array::Subindex::VERSION
   spec.authors       = ["Matthew Nielsen"]
   spec.email         = ["xunker@pyxidis.org"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.description   = %q{Access sub-integer array indexes in Ruby: Array.new([1,2])[0.5] == 1.5}
+  spec.summary       = %q{Access sub-integer array indexes in Ruby: Array.new([1,2])[0.5] == 1.5}
+  spec.homepage      = "https://github.com/xunker/array-subindex"
+  spec.license       = "WTFPL"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -21,5 +21,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
-  spec.add_development_dependency "debugger"
+  # spec.add_development_dependency "debugger"
 end

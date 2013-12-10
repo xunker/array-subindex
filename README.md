@@ -8,9 +8,9 @@ Now you can, in Ruby at least:
 ```ruby
 [1,2,3][0.5] == 1.5
 
-%w[ foo bar baz][1.3] == "arb"
+%w[ foo bar baz ][1.3] == "arb"
 
-[ [ 1, 2], [ 3, 4] ][0.5] == 2.5
+[ [1,2], [3,4] ][0.5] == 2.5
 ``` 
 
 The inspiration:

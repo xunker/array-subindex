@@ -105,7 +105,7 @@ describe 'Array::subindex' do
   end
 
   context "an adjacent value is numeric/string/array" do
-    subject { [ ['foo'], { bar: 'baz' } ] }
+    subject { [ ['foo'], { :bar => 'baz' } ] }
     it "will coerce them in to strings" do
       expect(
         subject[0.5]

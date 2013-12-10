@@ -24,7 +24,7 @@ You shouldn't really use this gem. Ever. Really, don't.
 Ok, ok, you can use is as long as you promise to *never* use it in a
 production environment. Clear?  Good.
 
-  $ gem install array-subindex
+    $ gem install array-subindex
 
 ..then..
 
@@ -34,9 +34,8 @@ require 'array/subindex'
 
 ## Usage
 
-This gem overrides the Ruby core Array#[] method. That is insanse.
-
-If a "normal" integer is used, the method behaves as normal:
+This gem overrides the Ruby core Array#[] method. That is insanse. If a
+"normal" integer is used, the method behaves as normal:
 
 ```ruby
 [1,2][0] == 1
@@ -96,12 +95,12 @@ or add them as appropriate:
 
 # works with hashes, too!
 [ ['foo'], { bar: 'baz' } ][0.5] == 'oobar'
-# 1/2 of "foo" round up to 2/3 + hash->converted to array->first key value
+# 1/2 of "foo" round up to 2/3 + hash.to_a -> 1/2 of first value
 ```
 
 ## License
 
-Distributed under the WTFPL lisence: rlespinasse/WTFPL
+Distributed under the [WTFPL](https://github.com/rlespinasse/WTFPL) license.
 
 ## Contributing
 

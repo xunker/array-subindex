@@ -27,6 +27,8 @@ private
   end
 
   def subindex_as_string(subindex, f_value, c_value)
+    f_value = f_value.to_s
+    c_value = c_value.to_s
     f_index = (f_value.length * subindex).to_i
     c_index = (c_value.length * (1.0 - subindex)).to_i
     # raise "#{subindex} '#{f_value}' '#{c_value}' #{f_index} #{c_index} #{f_value.slice(f_index, f_value.length-1)} #{c_value.slice(0, c_index)}"

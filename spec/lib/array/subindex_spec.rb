@@ -39,7 +39,7 @@ describe 'Array::subindex' do
 
   context "adjacent values are strings" do
     subject { %w{ this is a test } }
-    it "should concat fractional strings equally" do
+    it "concats fractional strings equally" do
       expect(
         subject[0.5]
       ).to eq(
@@ -47,7 +47,7 @@ describe 'Array::subindex' do
       )
     end
 
-    it "should concat fractional strings unequally" do
+    it "concats fractional strings unequally" do
       expect(
         subject[0.25]
       ).to eq(
@@ -55,7 +55,7 @@ describe 'Array::subindex' do
       )
     end
 
-    it "should round uneven indexes down" do
+    it "rounds uneven indexes down" do
       uneven_length_strings = %w{ foo bar baz }
 
       expect(
@@ -67,9 +67,26 @@ describe 'Array::subindex' do
   end
 
   context "adjacent values are mix of string and numeric" do
+    subject { ["foo", 100] }
+
+    it "will treat all elements as strings" do
+      expect(
+        subject[0.5]
+      ).to eq(
+        "oo1"
+      )
+    end
   end
 
   context "and adjacent value is neither numeric or string" do
+    subject { [ ['foo'], { bar: 'baz' } ] }
+    it "will coerce them in to strings" do
+      expect(
+        subject[0.5]
+      ).to eq(
+        'oo"]{:bar='
+      )
+    end
   end
 
 end

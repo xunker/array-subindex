@@ -78,13 +78,39 @@ describe 'Array::subindex' do
     end
   end
 
-  context "and adjacent value is neither numeric or string" do
+  context "array contains elements that are array-like" do
+    context "array-like element is full of numbers" do
+      subject { [ [ 1, 2 ], [ 3, 4] ] } 
+      it "returns the array indexes added together" do
+        # [2] + [3], then 0.5 of result
+        expect(
+          subject[0.5]
+        ).to eq(
+          2.5
+        )
+      end
+    end
+
+    context "array-like element is not numbers" do
+      subject { [ %w[foo bar], %w[baz qux] ] }
+      it "will return concatenated strings" do
+        expect(
+          subject[0.5]
+        ).to eq(
+          "arb"
+        )
+
+      end
+    end
+  end
+
+  context "an adjacent value is numeric/string/array" do
     subject { [ ['foo'], { bar: 'baz' } ] }
     it "will coerce them in to strings" do
       expect(
         subject[0.5]
       ).to eq(
-        'oo"]{:bar='
+        'oobar'
       )
     end
   end

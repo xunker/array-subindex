@@ -35,7 +35,7 @@ require 'array/subindex'
 
 ## Usage
 
-This gem overrides the Ruby core Array#[] method. That is insanse. If a
+This gem overrides the Ruby core Array#[] method. That is insane. If a
 "normal" integer is used, the method behaves as normal:
 
 ```ruby

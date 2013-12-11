@@ -35,6 +35,12 @@ describe 'Array::subindex' do
         subject[1.001]
       ).to eq( 2.999)
     end
+
+    it "can accept Rational as index" do
+      expect(
+        subject[Rational(3,2)]
+      ).to eq( 1.0 + 1.5)
+    end
   end
 
   context "adjacent values are strings" do
@@ -51,7 +57,17 @@ describe 'Array::subindex' do
       expect(
         subject[0.25]
       ).to eq(
-        "hisi"
+        "his"
+      )
+    end
+
+    it "deals with uneven subindexes" do
+      strings = %w{ foo bar baz }
+
+      expect(
+        strings[1.3]
+      ).to eq(
+        "bar"
       )
     end
 
@@ -63,6 +79,14 @@ describe 'Array::subindex' do
       ).to eq(
         "oob"
       )   
+    end
+
+    it "can accept Rational as index" do
+      expect(
+        subject[Rational(1,2)]
+      ).to eq(
+        "isi"
+      )
     end
   end
 

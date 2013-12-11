@@ -35,9 +35,9 @@ private
     f_value = f_value.to_s
     c_value = c_value.to_s
     f_index = (f_value.length * subindex).to_i
-    c_index = (c_value.length * (1.0 - subindex)).to_i
+    c_index = (c_value.length * subindex).to_i
     [
-      f_value.slice(f_index, f_value.length-1),
+      f_value.slice(f_index, f_value.length),
       c_value.slice(0, c_index)
     ].join
   end

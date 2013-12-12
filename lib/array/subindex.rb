@@ -26,8 +26,8 @@ class Array
 private
 
   def subindex_as_number(subindex, f_value, c_value)
-    f_fractional = f_value.to_f * subindex
-    c_fractional = c_value.to_f * (1.0 - subindex)
+    f_fractional = f_value.to_f * (1.0 - subindex)
+    c_fractional = c_value.to_f * subindex
     f_fractional + c_fractional
   end
 

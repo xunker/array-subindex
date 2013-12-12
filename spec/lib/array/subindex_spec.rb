@@ -23,17 +23,17 @@ describe 'Array::subindex' do
     end
 
     it "will add parts unequally" do
-      # 1/4 of index 0 + 3/4 of index 1
+      # 3/4 of index 0 + 1/4 of index 1
       expect(
         subject[0.25]
-      ).to eq( 0.25 + 1.5)
+      ).to eq( 0.75 + 0.5)
     end
 
     it "will round values" do
-      # expect 0.001 of index 1 and 0.998 index 2, but rounded to 2.999
+      # expect 0.998 of index 1 and 0.001 index 2, but rounded
       expect(
         subject[1.001]
-      ).to eq( 2.999)
+      ).to eq( 2.001)
     end
 
     it "can accept Rational as index" do

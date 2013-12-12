@@ -58,7 +58,7 @@ It also works for unequal devisions (e.g. indexes other than 0.5):
 
 ```ruby
 [1,2,3][0.25] == 1.75
-# 1/4 of index 0 + 3/4 of index 1
+# 3/4 of index 0 + 1/4 of index 1
 ```
 
 In the case of irrational divisions, the results are rounded:

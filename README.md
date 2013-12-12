@@ -35,6 +35,8 @@ production environment. Clear?  Good.
 require 'array/subindex'
 ```
 
+..and then go pour yourself a stiff drink because, baby, you're going to need it. In fact, you should make it a double just to be safe.
+
 ## Usage
 
 This gem overrides the Ruby core Array#[] method. That is insane. If a

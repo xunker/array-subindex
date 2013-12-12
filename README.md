@@ -11,6 +11,8 @@ Now you can, in Ruby at least:
 
 %w[ foo bar baz ][1.3] == "arb"
 
+[8,9][Rational(2,5)] == 8.4
+
 [ [1,2], [3,4] ][0.5] == 2.5
 ``` 
 
@@ -65,6 +67,14 @@ In the case of irrational divisions, the results are rounded:
 
 ```ruby
 [1,2,3][1.001] == 2.001
+```
+
+You can use other number classes, too:
+
+```ruby
+[8,9][Rational(2,5)] == 8.4
+
+[3,4,5][BigDecimal.new("1.5")] == 4.3
 ```
 
 For arrays of strings, a concatination of portions of the values are used:

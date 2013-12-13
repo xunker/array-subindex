@@ -77,6 +77,13 @@ describe 'Array::subindex' do
         subject[Rational(3,2)]
       ).to eq( 1.0 + 1.5)
     end
+
+    it "can accept BigDecimal as index" do
+      require 'bigdecimal'
+      expect(
+        subject[BigDecimal.new("1.5")]
+      ).to eq( 1.0 + 1.5)
+    end
   end
 
   context "adjacent values are strings" do

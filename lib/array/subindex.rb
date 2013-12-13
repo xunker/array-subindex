@@ -2,11 +2,11 @@ require "array/subindex/version"
 
 class Array
   def [](index, length=nil)
-    case index.class.to_s.to_sym
-    when :Range
-      fetch_range(index)
-    when :Float, :Rational
+
+    if index.respond_to?(:to_f) && !index.is_a?(Fixnum)
       fetch_subindex(index)
+    elsif index.is_a?(Range)
+      fetch_range(index)
     else
       fetch_integer_index(index, length)
     end

@@ -47,7 +47,7 @@ private
   end
 
   def fetch_range(range)
-    self.slice(range.first, range.size)
+    self.slice(range.first, range.to_a.length)
   end
 
   def subindex_as_number(subindex, f_value, c_value)
@@ -76,7 +76,7 @@ private
   end
 
   def array_subset(value, subindex, direction)
-    value = value.to_a
+    value = [*value] # .to_a give deprication warings in 1.8.7  
     subarray = if value.size <= 1
       value
     else

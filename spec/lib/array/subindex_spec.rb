@@ -7,16 +7,10 @@ describe 'Array::subindex' do
     it "returns normal index values with integer indexes" do
       -1.upto(2) do |i|
         expect( subject[i] ).to eq( subject.fetch(i) )
-        expect( subject[i] ).to be_a_kind_of(Float)
+        expect( subject[i] ).to be_a_kind_of(Fixnum)
       end
     end
-
-    it "raises same error when an undefined index is called" do
-      expect(
-        lambda { subject[3] }
-      ).to raise_exception(IndexError)
-    end
-
+    
     it "returns normal ranges" do
       expect( subject[0..1] ).to eq( [ 1, 2 ] )
       expect( subject[1..2] ).to eq( [ 2, 3 ] )

@@ -2,45 +2,48 @@ require "array/subindex/version"
 
 class Array
   def [](index, length=nil)
-    if !length && index.respond_to?(:to_f)
-      subindex = index.to_f - index.to_i
-
-      f = index.to_f.floor
-      c = index.to_f.ceil
-      f_value = self.fetch(f)
-      c_value = self.fetch(c)
-
-      f_value = array_subset(f_value, subindex, :to_end) if
-        array_like?(f_value)
-      c_value = array_subset(c_value, subindex, :from_beginning) if
-        array_like?(c_value)
-
-      if (numeric?(f_value) && numeric?(c_value))
-        subindex_as_number(subindex, f_value, c_value)
-      else
-        subindex_as_string(subindex, f_value, c_value)
-      end
+    case index.class.to_s.to_sym
+    when :Range
+      fetch_range(index)
+    when :Float, :Rational
+      fetch_subindex(index)
     else
-      if index.respond_to?(:to_a)
-        fetch_range(index)
-      else
-        if length
-          fetch_slice(index, length)
-        else
-          fetch_integer_index(index)
-        end
-      end
+      fetch_integer_index(index, length)
     end
   end
 
 private
 
+  def fetch_subindex(index)
+    subindex = index.to_f - index.to_i
+
+    f = index.to_f.floor
+    c = index.to_f.ceil
+    f_value = self.at(f)
+    c_value = self.at(c)
+
+    f_value = array_subset(f_value, subindex, :to_end) if
+      array_like?(f_value)
+    c_value = array_subset(c_value, subindex, :from_beginning) if
+      array_like?(c_value)
+
+    if (numeric?(f_value) && numeric?(c_value))
+      subindex_as_number(subindex, f_value, c_value)
+    else
+      subindex_as_string(subindex, f_value, c_value)
+    end
+  end
+
   def fetch_slice(index, length)
     self.slice(index, length.to_i)
   end
 
-  def fetch_integer_index(index)
-    self.fetch(index)
+  def fetch_integer_index(index,length)
+    if length
+      fetch_slice(index, length.to_i)
+    else
+      self.at(index)
+    end
   end
 
   def fetch_range(range)

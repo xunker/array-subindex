@@ -1,8 +1,10 @@
 require "array/subindex/version"
 
 class Array
-  def [](index)
-    if (subindex = index.to_f - index.to_i) > 0
+  def [](index, length=nil)
+    if !length && index.respond_to?(:to_f)
+      subindex = index.to_f - index.to_i
+
       f = index.to_f.floor
       c = index.to_f.ceil
       f_value = self.fetch(f)
@@ -19,11 +21,31 @@ class Array
         subindex_as_string(subindex, f_value, c_value)
       end
     else
-      self.fetch(index)
+      if index.respond_to?(:to_a)
+        fetch_range(index)
+      else
+        if length
+          fetch_slice(index, length)
+        else
+          fetch_integer_index(index)
+        end
+      end
     end
   end
 
 private
+
+  def fetch_slice(index, length)
+    self.slice(index, length.to_i)
+  end
+
+  def fetch_integer_index(index)
+    self.fetch(index)
+  end
+
+  def fetch_range(range)
+    self.slice(range.first, range.size)
+  end
 
   def subindex_as_number(subindex, f_value, c_value)
     f_fractional = f_value.to_f * (1.0 - subindex)

@@ -20,6 +20,8 @@ The inspiration:
 
 <blockquote class="twitter-tweet" lang="en"><p>&quot;Should array indices start at 0 or 1? My compromise of 0.5 was rejected without, I thought, proper consideration.&quot; — Stan Kelly-Bootle</p>&mdash; Usman Masood (@usmanm) <a href="https://twitter.com/usmanm/statuses/410449694603485184">December 10, 2013</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+This gem is postumously dedicated to <a href="http://en.wikipedia.org/wiki/Stan_Kelly-Bootle">Stan Kelly-Bootle</a>. I would like to think he'd approve of this sort misuse of technology.
+
 ## Installation
 
 You shouldn't really use this gem. Ever. Really, don't.

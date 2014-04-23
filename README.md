@@ -4,7 +4,7 @@
 Are you tired of The Man getting you down by only letting you use whole
 integers as array indexes? Who isn't, dude! Seriously, who is The Man anyway?
 
-Now you can, in Ruby at least:
+Now you can get back at "The Man", in Ruby at least:
 
 ```ruby
 [1,2,3][0.5] == 1.5
@@ -39,19 +39,18 @@ require 'array/subindex'
 
 ## Usage
 
-This gem overrides the Ruby core Array#[] method. That is insane. If a
-"normal" integer is used, the method behaves as normal:
+This gem overrides the Ruby core Array#[] method. **That is insane**. If a
+"normal" integer index is used, the method behaves as the untained Array class would:
 
 ```ruby
 [1,2][0] == 1
 ```
 
 However, if the method detects that a number is passed that is not an integer
-(but still a valid number class), the method will return an equivilent value
-from the array.
+(but still a valid number class), the method will return the correct portions of the approrriate indicies.
 
 In the case of an array of numbers (int, float, real), it gets portions of the
-adjacent indexes, adds them, and returns them. For example:
+adjacent values, adds them, and returns them. For example:
 
 ```ruby
 [1,2,3][1.5] == 2.5

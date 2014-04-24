@@ -41,15 +41,15 @@ require 'array/subindex'
 
 ## Usage
 
-This gem overrides the Ruby core Array#[] method. **That is insane**. If a
+This gem overrides the Ruby core Array#[] method. **Do I sound crazy yet? Because I should.** If a
 "normal" integer index is used, the method behaves as the untained Array class would:
 
 ```ruby
 [1,2][0] == 1
 ```
 
-However, if the method detects that a number is passed that is not an integer
-(but still a valid number class), the method will return the correct portions of the approrriate indicies.
+However, if the method detects that the index passed is not an integer
+but is still a valid number class, the method will return the correct portions of the appropriate indicies.
 
 In the case of an array of numbers (int, float, real), it gets portions of the
 adjacent values, adds them, and returns them. For example:
@@ -117,7 +117,7 @@ Distributed under the [WTFPL](https://github.com/rlespinasse/WTFPL) license.
 
 ## Contributing
 
-1. Don't. Stop encouraging me to commit these kinds of sin.
+1. Don't. Stop encouraging me to commit these kinds of sins.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/xunker/array-subindex/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

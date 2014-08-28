@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/xunker/array-subindex.png?branch=master)](https://travis-ci.org/xunker/array-subindex)
+[![Code Climate](https://codeclimate.com/github/xunker/array-subindex/badges/gpa.svg)](https://codeclimate.com/github/xunker/array-subindex)
 # Array::Subindex
 
 Are you tired of The Man getting you down by only letting you use whole

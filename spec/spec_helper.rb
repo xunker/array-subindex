@@ -1,5 +1,7 @@
-if RUBY_VERSION > "1.8.7"
-  # codeclimate reporter no working with < 1.9.3
+# avoid redundant reports to codeclimate for every version ruby
+# version run in travis. This also avoids trying to run test reporter
+# under 1.8.7 which will fail.
+if RUBY_VERSION == "2.1.1"
   require "codeclimate-test-reporter"
   CodeClimate::TestReporter.start
 end

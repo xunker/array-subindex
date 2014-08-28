@@ -119,7 +119,4 @@ Distributed under the [WTFPL](https://github.com/rlespinasse/WTFPL) license.
 
 ## Contributing
 
-1. Don't. Stop encouraging me to commit these kinds of sins.
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/xunker/array-subindex/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
+1. Don't. Stop encouraging me to commit sins like this.

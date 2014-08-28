@@ -1,7 +1,3 @@
-[![Build Status](https://travis-ci.org/xunker/array-subindex.png?branch=master)](https://travis-ci.org/xunker/array-subindex)
-[![Code Climate](https://codeclimate.com/github/xunker/array-subindex/badges/gpa.svg)](https://codeclimate.com/github/xunker/array-subindex)
-[![Test Coverage](https://codeclimate.com/github/xunker/array-subindex/badges/coverage.svg)](https://codeclimate.com/github/xunker/array-subindex)
-[ ![Codeship Status for xunker/array-subindex](https://www.codeship.io/projects/6fb16c30-10fb-0132-f222-0e0e1e0e9e00/status)](https://www.codeship.io/projects/32954)
 # Array::Subindex
 
 Are you tired of The Man getting you down by only letting you use whole
@@ -121,3 +117,10 @@ Distributed under the [WTFPL](https://github.com/rlespinasse/WTFPL) license.
 ## Contributing
 
 1. Don't. Stop encouraging me to commit sins like this.
+
+## Bling
+
+> VERY [![Code Climate](https://codeclimate.com/github/xunker/array-subindex/badges/gpa.svg)](https://codeclimate.com/github/xunker/array-subindex)
+> > [![Build Status](https://travis-ci.org/xunker/array-subindex.png?branch=master)](https://travis-ci.org/xunker/array-subindex) IMAGES
+> > > SUCH [![Test Coverage](https://codeclimate.com/github/xunker/array-subindex/badges/coverage.svg)](https://codeclimate.com/github/xunker/array-subindex)
+> > > > [ ![Codeship Status for xunker/array-subindex](https://www.codeship.io/projects/6fb16c30-10fb-0132-f222-0e0e1e0e9e00/status)](https://www.codeship.io/projects/32954) BADGES

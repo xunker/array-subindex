@@ -121,6 +121,6 @@ Distributed under the [WTFPL](https://github.com/rlespinasse/WTFPL) license.
 ## Bling
 
 > VERY [![Code Climate](https://codeclimate.com/github/xunker/array-subindex/badges/gpa.svg)](https://codeclimate.com/github/xunker/array-subindex)
-> > [![Build Status](https://travis-ci.org/xunker/array-subindex.png?branch=master)](https://travis-ci.org/xunker/array-subindex) IMAGES
+> > [![Build Status](https://travis-ci.org/xunker/array-subindex.png?branch=master)](https://travis-ci.org/xunker/array-subindex) IMAGE
 > > > SUCH [![Test Coverage](https://codeclimate.com/github/xunker/array-subindex/badges/coverage.svg)](https://codeclimate.com/github/xunker/array-subindex)
 > > > > [ ![Codeship Status for xunker/array-subindex](https://www.codeship.io/projects/6fb16c30-10fb-0132-f222-0e0e1e0e9e00/status)](https://www.codeship.io/projects/32954) BADGES

@@ -42,7 +42,7 @@ require 'array/subindex'
 ## Usage
 
 This gem overrides the Ruby core Array#[] method. **Do I sound crazy yet? Because I should.** If a
-"normal" integer index is used, the method behaves as the untained Array class would:
+"normal" integer index is used, the method behaves as the untainted Array class would:
 
 ```ruby
 [1,2][0] == 1

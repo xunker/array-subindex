@@ -1,12 +1,12 @@
 # frozen_string_literal: true
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
 
-require "rspec/core/rake_task"
-require "rspec/core/version"
+require 'rspec/core/rake_task'
+require 'rspec/core/version'
 
 task :default => :spec
 
-desc "Run all examples"
+desc 'Run all examples'
 RSpec::Core::RakeTask.new(:spec, :default) do |t|
   t.ruby_opts = %w[-w]
 end

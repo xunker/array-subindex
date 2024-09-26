@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "array/subindex/version"
+require 'array/subindex/version'
 
 class Array
 

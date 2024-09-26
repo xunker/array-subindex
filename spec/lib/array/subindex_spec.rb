@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 require 'array/subindex'
@@ -7,10 +9,10 @@ describe 'Array::subindex' do
     it "returns normal index values with integer indexes" do
       -1.upto(2) do |i|
         expect( subject[i] ).to eq( subject.fetch(i) )
-        expect( subject[i] ).to be_a_kind_of(Fixnum)
+        expect( subject[i] ).to be_a_kind_of(Integer)
       end
     end
-    
+
     it "returns normal ranges" do
       expect( subject[0..1] ).to eq( [ 1, 2 ] )
       expect( subject[1..2] ).to eq( [ 2, 3 ] )
@@ -27,7 +29,7 @@ describe 'Array::subindex' do
   end
 
   context "float with a mantissa of zero" do
-    
+
     context "integer values" do
       subject  { [ 1, 2 ] }
 
@@ -81,7 +83,7 @@ describe 'Array::subindex' do
     it "can accept BigDecimal as index" do
       require 'bigdecimal'
       expect(
-        subject[BigDecimal.new("1.5")]
+        subject[BigDecimal("1.5")]
       ).to eq( 1.0 + 1.5)
     end
   end
@@ -121,7 +123,7 @@ describe 'Array::subindex' do
         uneven_length_strings[0.5]
       ).to eq(
         "oob"
-      )   
+      )
     end
 
     it "can accept Rational as index" do
@@ -147,7 +149,7 @@ describe 'Array::subindex' do
 
   context "array contains elements that are array-like" do
     context "array-like element is full of numbers" do
-      subject { [ [ 1, 2 ], [ 3, 4] ] } 
+      subject { [ [ 1, 2 ], [ 3, 4] ] }
       it "returns the array indexes added together" do
         # [2] + [3], then 0.5 of result
         expect(

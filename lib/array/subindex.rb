@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "array/subindex/version"
 
 class Array
@@ -10,20 +12,20 @@ class Array
   #
   # The existing Array operator accepts either a single index, a Range, or a
   # starting index and a length (similar to String#slice). These values are
-  # expected to be Fixnums in this original version.
+  # expected to be `Integer` objects in this original version.
   #
   # We try to preserve all the previous functionality while also allowing
   # other Ruby numeric classes (Float, Rational and BigDecimal) to be used in
-  # place of Fixnum. Passing a Fixnum is still valid, of course.
+  # place of `Integer`. Passing a `Integer` is still valid, of course.
   #
-  # All the numbers passed in are coerced to Floats. This includes Fixnums,
-  # which means Fixnum `10` will be turned in to Float `10.0`. The standard
-  # "subindex" logic is then applied so, in the case of a Fixnum, the code
+  # All the numbers passed in are coerced to Floats. This includes `Integer`s,
+  # which means `Integer` `10` will be turned in to Float `10.0`. The standard
+  # "subindex" logic is then applied so, in the case of a `Integer`, the code
   # _should_ return the same result as the core Array class, even though it's
   # being processed in a very different way.
   def [](index, length=nil)
 
-    if index.respond_to?(:to_f) && !index.is_a?(Fixnum)
+    if index.respond_to?(:to_f) && !index.is_a?(Integer)
       fetch_subindex(index)
     elsif index.is_a?(Range)
       fetch_range(index)
@@ -110,7 +112,7 @@ private
   # based in the index passed. This method is pretty tortuous and could use
   # some refactoring.
   def array_subset(value, subindex, direction)
-    value = [*value] # .to_a gives deprication warings in 1.8.7  
+    value = [*value] # .to_a gives deprication warings in 1.8.7
     subarray = if value.size <= 1
       value
     else

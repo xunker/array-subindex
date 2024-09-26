@@ -13,7 +13,7 @@ Now you can get back at "The Man", in Ruby at least:
 [8,9][Rational(2,5)] == 8.4
 
 [ [1,2], [3,4] ][0.5] == 2.5
-``` 
+```
 
 The inspiration:
 
@@ -76,7 +76,7 @@ You can use other number classes, too:
 ```ruby
 [8,9][Rational(2,5)] == 8.4
 
-[3,4,5][BigDecimal.new("1.5")] == 4.3
+[3,4,5][BigDecimal("1.5")] == 4.3
 ```
 
 For arrays of strings, a concatination of portions of the values are used:

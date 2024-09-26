@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # avoid redundant reports to codeclimate for every version ruby
 # version run in travis. This also avoids trying to run test reporter
 # under 1.8.7 which will fail.

@@ -3,7 +3,6 @@
 require 'array/subindex/version'
 
 class Array
-
   # Here is where the magic starts, where we redefine the core Array operator,
   # something you *should NEVER do*, but we are. I debated using `alias` to
   # preserve the old method and pass "regular" requests to that, but I decided
@@ -23,8 +22,7 @@ class Array
   # "subindex" logic is then applied so, in the case of a `Integer`, the code
   # _should_ return the same result as the core Array class, even though it's
   # being processed in a very different way.
-  def [](index, length=nil)
-
+  def [](index, length = nil)
     if index.respond_to?(:to_f) && !index.is_a?(Integer)
       fetch_subindex(index)
     elsif index.is_a?(Range)
@@ -34,7 +32,7 @@ class Array
     end
   end
 
-private
+  private
 
   # Calculate the subindex with one value (not a range and without length).
   # Needs some refactoring since it's hard to tell at a glance what the code
@@ -65,7 +63,7 @@ private
     self.slice(index, length.to_i)
   end
 
-  def fetch_integer_index(index,length)
+  def fetch_integer_index(index, length)
     if length
       fetch_slice(index, length.to_i)
     else
@@ -114,25 +112,24 @@ private
   def array_subset(value, subindex, direction)
     value = [*value] # .to_a gives deprication warings in 1.8.7
     subarray = if value.size <= 1
-      value
-    else
-      index = (value.length.to_f * subindex).to_i
-      subarray = case direction.to_sym
-      when :to_end
-        value.slice(index, value.size-1)
-      when :from_beginning
-        value.slice(0, index)
-      else
-        raise "unknown direction :#{direction}"
-      end
-      subarray
-    end
+                 value
+               else
+                 index = (value.length.to_f * subindex).to_i
+                 subarray = case direction.to_sym
+                            when :to_end
+                              value.slice(index, value.size - 1)
+                            when :from_beginning
+                              value.slice(0, index)
+                            else
+                              raise "unknown direction :#{direction}"
+                            end
+                 subarray
+               end
 
-    if subarray.all?{ |a| numeric?(a) }
+    if subarray.all? { |a| numeric?(a) }
       subarray.inject(:+)
     else
       subarray.join
     end
   end
-
 end

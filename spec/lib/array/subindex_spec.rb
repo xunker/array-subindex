@@ -29,7 +29,6 @@ describe 'Array::subindex' do
   end
 
   context 'float with a mantissa of zero' do
-
     context 'integer values' do
       subject  { [ 1, 2 ] }
 
@@ -168,7 +167,6 @@ describe 'Array::subindex' do
         ).to eq(
           'arb'
         )
-
       end
     end
   end
@@ -183,5 +181,4 @@ describe 'Array::subindex' do
       )
     end
   end
-
 end

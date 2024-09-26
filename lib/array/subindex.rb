@@ -42,15 +42,15 @@ class Array
 
     f = index.to_f.floor
     c = index.to_f.ceil
-    f_value = self.at(f)
-    c_value = self.at(c)
+    f_value = at(f)
+    c_value = at(c)
 
     f_value = array_subset(f_value, subindex, :to_end) if
       array_like?(f_value)
     c_value = array_subset(c_value, subindex, :from_beginning) if
       array_like?(c_value)
 
-    if (numeric?(f_value) && numeric?(c_value))
+    if numeric?(f_value) && numeric?(c_value)
       subindex_as_number(subindex, f_value, c_value)
     else
       subindex_as_string(subindex, f_value, c_value)
@@ -60,20 +60,20 @@ class Array
   def fetch_slice(index, length)
     # If length is nil it will turn in to 0 which give the same result as
     # not passing a length at all.
-    self.slice(index, length.to_i)
+    slice(index, length.to_i)
   end
 
   def fetch_integer_index(index, length)
     if length
       fetch_slice(index, length.to_i)
     else
-      self.at(index)
+      at(index)
     end
   end
 
   # Converts a range call to a slice call. I have a feeling the logic is wrong.
   def fetch_range(range)
-    self.slice(range.first, range.to_a.length)
+    slice(range.first, range.to_a.length)
   end
 
   def subindex_as_number(subindex, f_value, c_value)
@@ -97,7 +97,7 @@ class Array
   # Tests if value is "number-like" by checking if it's string form
   # is nothing but numbers containing a decimal.
   def numeric?(test)
-    (test.class != String) && (!!(test.to_s =~ /[\d\.\/]+/))
+    (test.class != String) && !!(test.to_s =~ %r{[\d./]+})
   end
 
   # Tests is a value behaves like an array. Specifically, if I can coerce

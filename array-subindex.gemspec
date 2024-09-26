@@ -1,7 +1,5 @@
 # frozen_string_literal: true
-# coding: utf-8
-
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'array/subindex/version'
 
@@ -10,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Array::Subindex::VERSION
   spec.authors       = ['Matthew Nielsen']
   spec.email         = ['xunker@pyxidis.org']
-  spec.description   = %q{Access sub-integer array indexes in Ruby: Array.new([1,2])[0.5] == 1.5}
-  spec.summary       = %q{Access sub-integer array indexes in Ruby: Array.new([1,2])[0.5] == 1.5}
+  spec.description   = 'Access sub-integer array indexes in Ruby: Array.new([1,2])[0.5] == 1.5'
+  spec.summary       = 'Access sub-integer array indexes in Ruby: Array.new([1,2])[0.5] == 1.5'
   spec.homepage      = 'https://github.com/xunker/array-subindex'
   spec.license       = 'WTFPL'
   spec.required_ruby_version = '>= 3.2.0'
